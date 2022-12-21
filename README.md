@@ -181,14 +181,23 @@ pve-efiboot-tool kernel pin 5.4.203-1-pve
 Ausgabe:
 
 >Setting '5.4.203-1-pve' as grub default entry and running update-grub.
+>
 >Generating grub configuration file ...
+>
 >Found linux image: /boot/vmlinuz-5.15.74-1-pve
+>
 >Found initrd image: /boot/initrd.img-5.15.74-1-pve
+>
 >Found linux image: /boot/vmlinuz-5.4.203-1-pve
+>
 >Found initrd image: /boot/initrd.img-5.4.203-1-pve
+>
 >Warning: os-prober will not be executed to detect other bootable partitions.
+>
 >Systems on them will not be added to the GRUB boot configuration.
+>
 >Check GRUB_DISABLE_OS_PROBER documentation entry.
+>
 >done
 
 ```bash
