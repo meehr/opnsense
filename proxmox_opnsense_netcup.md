@@ -269,7 +269,7 @@ iface vmbr1 inet static
 ```
 
 This is only an example, moreover the IPv6 config is still missing here.
-![Network_Proxmox_after_Install](/assets/Network_Proxmox_after_Install_5j3f164eu.png)
+![Network_Proxmox_after_Install](/assets/Network_Proxmox_after_Install_5j3f164eu.png =640x480)
 
 #### Certificates for Proxmox
 
