@@ -81,6 +81,7 @@ systemctl reboot
 
 ## Proxmox VE install
 
+Based on the Proxmox tutorial and with the help of my good colleague (name not mentioned for privacy reasons).
 <https://pve.proxmox.com/wiki/Install_Proxmox_VE_on_Debian_11_Bullseye>
 
 ### Change to root
