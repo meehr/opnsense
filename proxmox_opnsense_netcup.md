@@ -274,7 +274,7 @@ This is only an example, moreover the IPv6 config is still missing here.
 #### Certificates for Proxmox
 
 Datacenter / ACME
-(Bild: acme_add_account_proxmox)![acme_add_account_proxmox](/assets/acme_add_account_proxmox.png)
+(Bild: acme_add_account_proxmox)![acme_add_account_proxmox](/assets/acme_add_account_proxmox.png =320x120)
 
 - Accounts ADD
   - Account Name:   Example.com
