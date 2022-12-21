@@ -374,7 +374,6 @@ At this point we do not want to configure a LAN interface. Therefore the next 2 
 Now you can call your OPNsense GUI in your Browser.
 > [Second_IPv4:443]
 
-..
 ![Alt text](bilder/opnsense_first_login.png)
 
 ![OPNsense with Dark Screen](bilder/opnsense_with_darktheme_001.png)
