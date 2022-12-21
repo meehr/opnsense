@@ -46,6 +46,8 @@ No advertising the server was not provided to me for free, I do this just for fu
 
 Attention: NO CHANGES on Network Interfaces!!!!
 
+If you make the adjustments to /etc/network/interfaces before installing Proxmox, you can still access your server via VNC Console in the best case. But it is also possible that this requires a new installation of the server.
+
 edit .ssh/config
 
 ```bash
@@ -151,7 +153,7 @@ root@proxmox:~# update-grub
 
 Why I use a 5.4LTS kernel here?
 
-I have tested many different kernels in this combination. And even though the 5.4.LTS kernel is no longer shipped with Debian Bullseye and is not recommended for Proxmox VE, I have had the best experience with it and can definitely guarantee that it works as of the date of writing this howto.
+I have tested many different kernels in this combination. And although the 5.4.LTS kernel is no longer shipped with Debian Bullseye and is not recommended for Proxmox VE, I have had the best experience with it and can definitely guarantee that it worked at the time I wrote the howto.
 
 ```bash
 wget <http://download.proxmox.com/debian/pve/dists/buster/pve-no-subscription/binary-amd64/pve-kernel-5.4.203-1-pve_5.4.203-1_amd64.deb>
