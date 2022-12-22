@@ -22,11 +22,9 @@
 
 ![Proxmox Dark Theme](bilder/proxmox_darktheme.png)
 
-Instructions for the installation of Proxmox and OPNsense on a root server of Netcup in Karlsruhe, Germany.
+Instructions for the installation of Proxmox and OPNsense on a KVM  server with VMX Flag
 
-<https://netcup.de>
-
-I use a RS 8000 for this Howto. The server has 14 cores and 64 GB Ram as well as 2 TB SSD storage.
+I use a powerfull server for this Howto. The server has 16 cores and 64 GB Ram as well as 3 TB SSD storage.
 
 However, these instructions should also work on any other server with nested virtualization.
 
