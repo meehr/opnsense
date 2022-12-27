@@ -1,6 +1,8 @@
 # Proxmox and OPNsense with KVM Root Server
 
-(Nested virtualization)
+Nested virtualization and 2 public IPv4 Addresses
+
+![Diagram Proxmox OPNsense](bilder/phoenyx_network_2_eng.png)
 
 - [Proxmox and OPNsense with KVM Root Server](#proxmox-and-opnsense-with-kvm-root-server)
   - [Install Debian 11 Netinstall](#install-debian-11-netinstall)
@@ -45,7 +47,8 @@ No advertising the server was not provided to me for free, I do this just for fu
 
 ### Post Install Debian 11
 
-Attention: NO CHANGES on Network Interfaces!!!!
+> **Warning:** 
+> NO CHANGES on Network Interfaces **!!!!**
 
 If you make the adjustments to /etc/network/interfaces before installing Proxmox, you can still access your server via VNC Console in the best case. But it is also possible that this requires a new installation of the server.
 
