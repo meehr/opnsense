@@ -4,7 +4,7 @@
 
 - [Proxmox and OPNsense with Netcup Root Server](#proxmox-and-opnsense-with-netcup-root-server)
   - [Install Debian 11 Netinstall](#install-debian-11-netinstall)
-  - [Post Install Debian 11](#post-install-debian-11)
+    - [Post Install Debian 11](#post-install-debian-11)
   - [Proxmox VE install](#proxmox-ve-install)
     - [Change to root](#change-to-root)
     - [Edit /etc/hosts](#edit-etchosts)
@@ -19,6 +19,9 @@
   - [Install OPNSense VM](#install-opnsense-vm)
     - [Assign interfaces](#assign-interfaces)
     - [Set interface IP address](#set-interface-ip-address)
+  - [Securing Proxmox and OPNsense with 2FA (TOTP)](#securing-proxmox-and-opnsense-with-2fa-totp)
+    - [Proxmox 2FA](#proxmox-2fa)
+    - [OPNsense 2FA](#opnsense-2fa)
 
 ![Proxmox Dark Theme](bilder/proxmox_darktheme.png)
 
@@ -40,7 +43,7 @@ No advertising the server was not provided to me for free, I do this just for fu
 - only SSH Server and standard system utilities
 - grub on sda
 
-## Post Install Debian 11
+### Post Install Debian 11
 
 Attention: NO CHANGES on Network Interfaces!!!!
 
@@ -367,7 +370,9 @@ At this point we do not want to configure a LAN interface. Therefore the next 2 
 
 - Enter the new WAN IPv4 subnet bit count:
 
-> 32 #I take 32 here because no other IP is needed in this WAN.
+> 32
+
+<!--I take 32 here because no other IP is needed in this WAN.-->
 
 - For a WAN, enter the new WAN IPv4 upstream gateway address:
 
@@ -384,6 +389,40 @@ At this point we do not want to configure a LAN interface. Therefore the next 2 
 Now you can call your OPNsense GUI in your Browser.
 > [Second_IPv4:443]
 
-![Alt text](bilder/opnsense_first_login.png)
+![Erster Login auf der OPNsense](bilder/opnsense_first_login.png)
+
+## Securing Proxmox and OPNsense with 2FA (TOTP)
+
+Since only one interface has been created so far, the interface should be directly accessible on the [Second_IPv4]. Unfortunately this makes some security measures necessary.
+
+Therefore, I would like to bring this forward and only then proceed with all further steps for setting up the OPNsense and setting up first VMs under Proxmox.
+
+### Proxmox 2FA
+
+Setting up 2FA under Proxmox is really easy. Just add a user under ``Datacenter / Permissions / Two Factor`` with Add / TOTP.
+
+![2FA Proxmox](bilder/proxmox_totp_user.png)
+
+You have now the possibility to add your 2FA either with the QR Code or with the Secret (the QR Code shown in the picture is not valid anymore).
+
+After that you will be asked for the second factor when logging in.
+
+![2FA Proxmox Login](bilder/proxmox_2fa_login.png)
+
+### OPNsense 2FA
+
+At <https://docs.opnsense.org/manual/how-tos/two_factor.html> you can find a very good tutorial on how to enable 2FA under OPNsense.
+
+![OPNsense 2FA Server](bilder/opnsense_add_2fa_server.png)
+
+Then you just need to create an appropriate secret at the user and connect to your app via QR code or secret.
+
+![OPNsense 2FA Secret](bilder/opnsense_2fa_secret.png)
+
+After that you have to make the right server the default server for the login. You can find this under ``Settings:Administration:Authentication``.
+
+![OPNsense Settings Administration Authentication](bilder/opnsense_settings_administration_authentication.png)
+
+If you did everything right then Proxmox and OPNsense are now provided with a 2FA via TOTP and should be reasonably secure even if you are directly reachable from the network.
 
 ![OPNsense with Dark Screen](bilder/opnsense_with_darktheme_001.png)
