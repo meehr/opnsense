@@ -2,7 +2,7 @@
 
 Nested virtualization and 2 public IPv4 Addresses
 
-![Diagram Proxmox OPNsense](bilder/phoenyx_network_2_eng.png)
+![Diagram Proxmox OPNsense](https://org.phoenyx.dev/wp-content/uploads/phoenyx_network_2_eng.png)
 
 - [Proxmox and OPNsense with KVM Root Server](#proxmox-and-opnsense-with-kvm-root-server)
   - [Install Debian 11 Netinstall](#install-debian-11-netinstall)
@@ -25,7 +25,7 @@ Nested virtualization and 2 public IPv4 Addresses
     - [Proxmox 2FA](#proxmox-2fa)
     - [OPNsense 2FA](#opnsense-2fa)
 
-![Proxmox Dark Theme](bilder/proxmox_darktheme.png)
+![Proxmox Dark Theme](https://org.phoenyx.dev/wp-content/uploads/proxmox_darktheme.png)
 
 Instructions for the installation of Proxmox and OPNsense on a KVM  server with VMX Flag
 
@@ -47,7 +47,8 @@ No advertising the server was not provided to me for free, I do this just for fu
 
 ### Post Install Debian 11
 
-> **Warning:** 
+>![Achtung](https://org.phoenyx.dev/wp-content/uploads/Achtung.png)
+>**Warning:**
 > NO CHANGES on Network Interfaces **!!!!**
 
 If you make the adjustments to /etc/network/interfaces before installing Proxmox, you can still access your server via VNC Console in the best case. But it is also possible that this requires a new installation of the server.
@@ -285,12 +286,12 @@ iface vmbr1 inet static
 ```
 
 This is only an example, moreover the IPv6 config is still missing here.
-![Network_Proxmox_after_Install](/assets/Network_Proxmox_after_Install_5j3f164eu.png =640x480)
+![Network_Proxmox_after_Install](https://org.phoenyx.dev/wp-content/uploads/Network_Proxmox_after_Install.png)
 
 #### Certificates for Proxmox
 
 Datacenter / ACME
-(Bild: acme_add_account_proxmox)![acme_add_account_proxmox](/assets/acme_add_account_proxmox.png =320x120)
+![acme_add_account_proxmox](https://org.phoenyx.dev/wp-content/uploads/acme_add_account_proxmox.png)
 
 - Accounts ADD
   - Account Name:   Example.com
@@ -300,9 +301,10 @@ Datacenter / ACME
 - Register
 
 Challenge Plugins ADD
-(Bild: add_acme_dns_plugin)![add_acme_dns_plugin](/assets/add_acme_dns_plugin.png)
+![add_acme_dns_plugin](https://org.phoenyx.dev/wp-content/uploads/add_acme_dns_plugin.png)
 
-DNS API choice: Example Cloudflare Managed DNS (Bild: acme_dns_cloudflare_plugin)![acme_dns_cloudflare_plugin](/assets/acme_dns_cloudflare_plugin.png)
+DNS API choice: Example Cloudflare Managed DNS
+![acme_dns_cloudflare_plugin](https://org.phoenyx.dev/wp-content/uploads/acme_dns_cloudflare_plugin.png)
 
 Fill all Fields with valid data.
 
@@ -319,39 +321,39 @@ Proxmox / System / Certificates
 - upload opnsense iso
 - Create VM
   - General: give your VM a name
-  ![Create VM General](bilder/create_vm_opnsense_001.png)
+  ![Create VM General](https://org.phoenyx.dev/wp-content/uploads/create_vm_opnsense_001.png)
   - OS: select yor ISO Image, in this case OPNsense ISO
-  ![Create VM OS](bilder/create_vm_opnsense_002.png)
+  ![Create VM OS](https://org.phoenyx.dev/wp-content/uploads/create_vm_opnsense_002.png)
   - System: for OPNsense you can check Qemu Agent
-  ![Create VM System](bilder/create_vm_opnsense_003.png)
+  ![Create VM System](https://org.phoenyx.dev/wp-content/uploads/create_vm_opnsense_003.png)
   - Disks: Add a Disk for your VM and check IO Thread
-  ![Create VM Disk](bilder/create_vm_opnsense_004.png)
+  ![Create VM Disk](https://org.phoenyx.dev/wp-content/uploads/create_vm_opnsense_004.png)
   - CPU: There are different opinions about how many CPUs and memory should be assigned to the OPNsense.
-  ![Create VM CPU](bilder/create_vm_opnsense_005.png)
+  ![Create VM CPU](https://org.phoenyx.dev/wp-content/uploads/create_vm_opnsense_005.png)
     - Decide for yourself afterwards you can always change it.
   - Memory: Same as CPU diffrent opinions.
-  ![Create VM Memory](bilder/create_vm_opnsense_006.png)
+  ![Create VM Memory](https://org.phoenyx.dev/wp-content/uploads/create_vm_opnsense_006.png)
   - Network: I have not added a network interface and will do so later.
-  ![Create VM Network](bilder/create_vm_opnsense_007.png)
+  ![Create VM Network](https://org.phoenyx.dev/wp-content/uploads/create_vm_opnsense_007.png)
   - Confirm: Overview of all specifications.
-  ![Create VM Confirm](bilder/create_vm_opnsense_008.png)
+  ![Create VM Confirm](https://org.phoenyx.dev/wp-content/uploads/create_vm_opnsense_008.png)
 
 - Hardware / Add / Network Device
   - First we add only vmbr0 for WAN Interface
-  ![Add Network Interface vmbr0](bilder/create_vm_opnsense_network_interface_vmbr0.png)
+  ![Add Network Interface vmbr0](https://org.phoenyx.dev/wp-content/uploads/create_vm_opnsense_network_interface_vmbr0.png)
 
 ## Install OPNSense VM
 
 - Select OPNSense VM and Console then click start now
 - If you see this screen login with installer and opnsense
-  ![Login Screen first start](bilder/install_opnsense_vm_001.png)
+  ![Login Screen first start](https://org.phoenyx.dev/wp-content/uploads/install_opnsense_vm_001.png)
 - Now install opnsense, choose your keyboard layout and the desired filesystem. If you have assigned multiple disks to your VM before, you can even use ZFS with mirror or raid function.
 - as last point change your root passwort and then reboot opnsense.
-  ![Change Root Password and Reboot](bilder/install_opnsense_vm_002.png)
+  ![Change Root Password and Reboot](https://org.phoenyx.dev/wp-content/uploads/install_opnsense_vm_002.png)
 - after reboot you login with root and you password
-  ![Login with root and password](bilder/install_opnsense_vm_003.png)
+  ![Login with root and password](https://org.phoenyx.dev/wp-content/uploads/install_opnsense_vm_003.png)
 - after login you see this options
-    ![Options after Login](bilder/install_opnsense_vm_004.png)
+    ![Options after Login](https://org.phoenyx.dev/wp-content/uploads/install_opnsense_vm_004.png)
 
 ### Assign interfaces
 
@@ -362,7 +364,7 @@ Proxmox / System / Certificates
 At this point we do not want to configure a LAN interface. Therefore the next 2 points can be skipped with Enter.
   
 - "Do you want to proceed?" We answer with Yes
-  ![Assign WAN Interface](bilder/install_opnsense_vm_006.png)
+  ![Assign WAN Interface](https://org.phoenyx.dev/wp-content/uploads/install_opnsense_vm_006.png)
 
 ### Set interface IP address
 
@@ -381,7 +383,7 @@ At this point we do not want to configure a LAN interface. Therefore the next 2 
 
 > [MAIN_IPv4]
 
-  ![WAN IP Config](bilder/install_opnsense_vm_007.png)
+  ![WAN IP Config](https://org.phoenyx.dev/wp-content/uploads/install_opnsense_vm_007.png)
 
 - Questions about name server for WAN and IPv6 answer with N or Enter.
 
@@ -392,7 +394,7 @@ At this point we do not want to configure a LAN interface. Therefore the next 2 
 Now you can call your OPNsense GUI in your Browser.
 > [Second_IPv4:443]
 
-![Erster Login auf der OPNsense](bilder/opnsense_first_login.png)
+![Erster Login auf der OPNsense](https://org.phoenyx.dev/wp-content/uploads/opnsense_first_login.png)
 
 ## Securing Proxmox and OPNsense with 2FA (TOTP)
 
@@ -404,28 +406,28 @@ Therefore, I would like to bring this forward and only then proceed with all fur
 
 Setting up 2FA under Proxmox is really easy. Just add a user under ``Datacenter / Permissions / Two Factor`` with Add / TOTP.
 
-![2FA Proxmox](bilder/proxmox_totp_user.png)
+![2FA Proxmox](https://org.phoenyx.dev/wp-content/uploads/proxmox_totp_user.png)
 
 You have now the possibility to add your 2FA either with the QR Code or with the Secret (the QR Code shown in the picture is not valid anymore).
 
 After that you will be asked for the second factor when logging in.
 
-![2FA Proxmox Login](bilder/proxmox_2fa_login.png)
+![2FA Proxmox Login](https://org.phoenyx.dev/wp-content/uploads/proxmox_2fa_login.png)
 
 ### OPNsense 2FA
 
 At <https://docs.opnsense.org/manual/how-tos/two_factor.html> you can find a very good tutorial on how to enable 2FA under OPNsense.
 
-![OPNsense 2FA Server](bilder/opnsense_add_2fa_server.png)
+![OPNsense 2FA Server](https://org.phoenyx.dev/wp-content/uploads/opnsense_add_2fa_server.png)
 
 Then you just need to create an appropriate secret at the user and connect to your app via QR code or secret.
 
-![OPNsense 2FA Secret](bilder/opnsense_2fa_secret.png)
+![OPNsense 2FA Secret](https://org.phoenyx.dev/wp-content/uploads/opnsense_2fa_secret.png)
 
 After that you have to make the right server the default server for the login. You can find this under ``Settings:Administration:Authentication``.
 
-![OPNsense Settings Administration Authentication](bilder/opnsense_settings_administration_authentication.png)
+![OPNsense Settings Administration Authentication](https://org.phoenyx.dev/wp-content/uploads/opnsense_settings_administration_authentication.png)
 
 If you did everything right then Proxmox and OPNsense are now provided with a 2FA via TOTP and should be reasonably secure even if you are directly reachable from the network.
 
-![OPNsense with Dark Screen](bilder/opnsense_with_darktheme_001.png)
+![OPNsense with Dark Screen](https://org.phoenyx.dev/wp-content/uploads/opnsense_with_darktheme_001.png)
