@@ -1,8 +1,8 @@
-# Proxmox and OPNsense with Netcup Root Server
+# Proxmox and OPNsense with KVM Root Server
 
 (Nested virtualization)
 
-- [Proxmox and OPNsense with Netcup Root Server](#proxmox-and-opnsense-with-netcup-root-server)
+- [Proxmox and OPNsense with KVM Root Server](#proxmox-and-opnsense-with-kvm-root-server)
   - [Install Debian 11 Netinstall](#install-debian-11-netinstall)
     - [Post Install Debian 11](#post-install-debian-11)
   - [Proxmox VE install](#proxmox-ve-install)
